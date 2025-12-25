@@ -129,6 +129,17 @@
       "author": {
         "name": "Jan Kott"
       }
+    },
+    {
+      "name": "dart-analyzer",
+      "version": "1.0.0",
+      "source": "./dart-analyzer",
+      "description": "Dart/Flutter language server",
+      "category": "development",
+      "tags": ["dart", "flutter", "lsp"],
+      "author": {
+        "name": "Tyler Jewell"
+      }
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "dart": {
+    "command": "dart",
+    "args": ["language-server", "--client-id=claude-code.dart-analyzer", "--client-version=1.0.0"],
+    "extensionToLanguage": {
+      ".dart": "dart"
+    },
+    "transport": "stdio",
+    "initializationOptions": {
+      "onlyAnalyzeProjectsWithOpenFiles": false,
+      "suggestFromUnimportedLibraries": true,
+      "closingLabels": false,
+      "outline": true,
+      "flutterOutline": true
+    },
+    "settings": {
+      "dart": {
+        "completeFunctionCalls": true,
+        "enableSnippets": true,
+        "showTodos": false,
+        "documentation": "full",
+        "includeDependenciesInWorkspaceSymbols": true
+      }
+    },
+    "maxRestarts": 3
+  }
+}
