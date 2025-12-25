@@ -3,7 +3,7 @@
   "name": "claude-code-lsps",
   "metadata": {
     "description": "LSP plugins for Claude Code",
-    "version": "1.1.0"
+    "version": "1.0.0"
   },
   "owner": {
     "name": "Jan Kott"
