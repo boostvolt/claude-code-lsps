@@ -1,0 +1,8 @@
+{
+  "name": "dart-analyzer",
+  "description": "Dart/Flutter language server",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jan Kott"
+  }
+}

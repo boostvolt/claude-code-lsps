@@ -1,0 +1,13 @@
+{
+  "dart": {
+    "command": "dart",
+    "args": ["language-server", "--client-id=claude-code.dart-analyzer", "--client-version=1.0.0"],
+    "extensionToLanguage": {
+      ".dart": "dart"
+    },
+    "transport": "stdio",
+    "initializationOptions": {},
+    "settings": {},
+    "maxRestarts": 3
+  }
+}

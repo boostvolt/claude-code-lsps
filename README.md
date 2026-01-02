@@ -33,6 +33,7 @@ The Language Server Protocol provides IDE-like intelligence to Claude Code. On s
 | [rust-analyzer](./rust-analyzer)                   | Rust                  | [rust-analyzer](https://github.com/rust-lang/rust-analyzer)              |
 | [solargraph](./solargraph)                         | Ruby                  | [Solargraph](https://github.com/castwide/solargraph)                     |
 | [vscode-html-css](./vscode-html-css)               | HTML/CSS              | [vscode-langservers](https://github.com/hrsh7th/vscode-langservers-extracted) |
+| [dart-analyzer](./dart-analyzer)                   | Dart/Flutter          | [Dart SDK](https://dart.dev/tools/dart-analyze)                          |
 
 ## Getting Started
 
@@ -73,6 +74,7 @@ Install individual plugins:
 /plugin install rust-analyzer@claude-code-lsps
 /plugin install solargraph@claude-code-lsps
 /plugin install vscode-html-css@claude-code-lsps
+/plugin install dart-analyzer@claude-code-lsps
 ```
 
 Or browse and install interactively:
@@ -207,6 +209,26 @@ gem install solargraph
 ```bash
 npm install -g vscode-langservers-extracted
 ```
+
+</details>
+
+<details>
+<summary><strong>Dart/Flutter (dart-analyzer)</strong></summary>
+
+Install Dart SDK:
+
+```bash
+brew tap dart-lang/dart
+brew install dart
+```
+
+Or install Flutter (includes Dart):
+
+```bash
+# See https://docs.flutter.dev/get-started/install
+```
+
+Ensure `dart` is in your PATH.
 
 </details>
 
