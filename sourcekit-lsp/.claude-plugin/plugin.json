@@ -1,0 +1,10 @@
+{
+  "name": "sourcekit-lsp",
+  "description": "Swift language server",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jan Kott"
+  },
+  "hooks": "./hooks/hooks.json",
+  "lspServers": "./.lsp.json"
+}

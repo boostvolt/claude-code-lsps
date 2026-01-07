@@ -43,6 +43,7 @@ The Language Server Protocol provides IDE-like intelligence to Claude Code. On s
 | [solargraph](./solargraph)                         | Ruby                  | [Solargraph](https://github.com/castwide/solargraph)                          |
 | [vscode-html-css](./vscode-html-css)               | HTML/CSS              | [vscode-langservers](https://github.com/hrsh7th/vscode-langservers-extracted) |
 | [dart-analyzer](./dart-analyzer)                   | Dart/Flutter          | [Dart SDK](https://dart.dev/tools/dart-analyze)                               |
+| [sourcekit-lsp](./sourcekit-lsp)                   | Swift                 | [sourcekit-lsp](https://github.com/swiftlang/sourcekit-lsp)                   |
 
 ## Getting Started
 
@@ -70,6 +71,7 @@ Install individual plugins:
 /plugin install solargraph@claude-code-lsps
 /plugin install vscode-html-css@claude-code-lsps
 /plugin install dart-analyzer@claude-code-lsps
+/plugin install sourcekit-lsp@claude-code-lsps
 ```
 
 Or browse and install interactively:
@@ -224,6 +226,20 @@ Or install Flutter (includes Dart):
 ```
 
 Ensure `dart` is in your PATH.
+
+</details>
+
+<details>
+<summary><strong>Swift (sourcekit-lsp)</strong></summary>
+
+sourcekit-lsp is bundled with Xcode. Install Xcode from the App Store:
+
+```bash
+# Verify installation
+xcrun --find sourcekit-lsp
+```
+
+Or install a Swift toolchain from [swift.org/install](https://swift.org/install/).
 
 </details>
 

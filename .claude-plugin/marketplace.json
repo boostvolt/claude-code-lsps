@@ -138,7 +138,18 @@
       "category": "development",
       "tags": ["dart", "flutter", "lsp"],
       "author": {
-        "name": "Tyler Jewell"
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "sourcekit-lsp",
+      "version": "1.0.0",
+      "source": "./sourcekit-lsp",
+      "description": "Swift language server",
+      "category": "development",
+      "tags": ["swift", "ios", "macos", "lsp"],
+      "author": {
+        "name": "Jan Kott"
       }
     }
   ]
