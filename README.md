@@ -6,37 +6,43 @@ A collection of Language Server Protocol (LSP) plugins for [Claude Code](https:/
 
 ## What is LSP Integration?
 
-> [!IMPORTANT]
-> Requires Claude Code 2.0.74+
+> [!WARNING]
+> **Known Issue:** LSP integration is broken since ~v2.0.69. Root cause is a race condition where LSP Manager initializes before plugins finish loading ([#14803](https://github.com/anthropics/claude-code/issues/14803), [#13952](https://github.com/anthropics/claude-code/issues/13952)). PRs are in flight to fix this. Workaround: downgrade to v2.0.67 and set `ENABLE_LSP_TOOL=1`.
 
 The Language Server Protocol provides IDE-like intelligence to Claude Code. On startup, Claude Code automatically starts LSP servers from installed plugins and exposes them to Claude in two ways:
 
-**LSP Tool** - A builtin tool with 5 operations mapping directly to LSP commands:
+**LSP Tool** - A builtin tool with 9 operations mapping directly to LSP commands:
 
-- `goToDefinition` - Jump to where a symbol is defined
-- `findReferences` - Find all usages of a symbol
-- `hover` - Get documentation and type info
-- `documentSymbol` - List all symbols in a file
-- `workspaceSymbol` - Search symbols across the project
+| Operation              | Description                                                     |
+| ---------------------- | --------------------------------------------------------------- |
+| `goToDefinition`       | Find where a symbol is defined                                  |
+| `findReferences`       | Find all references to a symbol                                 |
+| `hover`                | Get hover info (docs, type info) for a symbol                   |
+| `documentSymbol`       | Get all symbols (functions, classes, variables) in a document   |
+| `workspaceSymbol`      | Search for symbols across the entire workspace                  |
+| `goToImplementation`   | Find implementations of an interface/abstract method            |
+| `prepareCallHierarchy` | Get call hierarchy item at a position                           |
+| `incomingCalls`        | Find all functions/methods that call the function at a position |
+| `outgoingCalls`        | Find all functions/methods called by the function at a position |
 
 **Automatic Diagnostics** - Real-time error and warning detection similar to the VS Code integration, but operating independently. These diagnostics tend to be faster and more comprehensive than the VS Code equivalent.
 
 ## Available Plugins
 
-| Plugin                                             | Language              | LSP                                                                      |
-| -------------------------------------------------- | --------------------- | ------------------------------------------------------------------------ |
-| [gopls](./gopls)                                   | Go                    | [gopls](https://github.com/golang/tools/tree/master/gopls)               |
-| [vtsls](./vtsls)                                   | TypeScript/JavaScript | [vtsls](https://github.com/yioneko/vtsls)                                |
-| [pyright](./pyright)                               | Python                | [pyright](https://github.com/microsoft/pyright)                          |
-| [jdtls](./jdtls)                                   | Java                  | [jdtls](https://github.com/eclipse-jdtls/eclipse.jdt.ls)                 |
-| [clangd](./clangd)                                 | C/C++                 | [clangd](https://clangd.llvm.org/)                                       |
-| [omnisharp](./omnisharp)                           | C#                    | [OmniSharp](https://github.com/OmniSharp/omnisharp-roslyn)               |
-| [intelephense](./intelephense)                     | PHP                   | [Intelephense](https://github.com/bmewburn/intelephense-docs)            |
-| [kotlin-language-server](./kotlin-language-server) | Kotlin                | [kotlin-language-server](https://github.com/fwcd/kotlin-language-server) |
-| [rust-analyzer](./rust-analyzer)                   | Rust                  | [rust-analyzer](https://github.com/rust-lang/rust-analyzer)              |
-| [solargraph](./solargraph)                         | Ruby                  | [Solargraph](https://github.com/castwide/solargraph)                     |
+| Plugin                                             | Language              | LSP                                                                           |
+| -------------------------------------------------- | --------------------- | ----------------------------------------------------------------------------- |
+| [gopls](./gopls)                                   | Go                    | [gopls](https://github.com/golang/tools/tree/master/gopls)                    |
+| [vtsls](./vtsls)                                   | TypeScript/JavaScript | [vtsls](https://github.com/yioneko/vtsls)                                     |
+| [pyright](./pyright)                               | Python                | [pyright](https://github.com/microsoft/pyright)                               |
+| [jdtls](./jdtls)                                   | Java                  | [jdtls](https://github.com/eclipse-jdtls/eclipse.jdt.ls)                      |
+| [clangd](./clangd)                                 | C/C++                 | [clangd](https://clangd.llvm.org/)                                            |
+| [omnisharp](./omnisharp)                           | C#                    | [OmniSharp](https://github.com/OmniSharp/omnisharp-roslyn)                    |
+| [intelephense](./intelephense)                     | PHP                   | [Intelephense](https://github.com/bmewburn/intelephense-docs)                 |
+| [kotlin-language-server](./kotlin-language-server) | Kotlin                | [kotlin-language-server](https://github.com/fwcd/kotlin-language-server)      |
+| [rust-analyzer](./rust-analyzer)                   | Rust                  | [rust-analyzer](https://github.com/rust-lang/rust-analyzer)                   |
+| [solargraph](./solargraph)                         | Ruby                  | [Solargraph](https://github.com/castwide/solargraph)                          |
 | [vscode-html-css](./vscode-html-css)               | HTML/CSS              | [vscode-langservers](https://github.com/hrsh7th/vscode-langservers-extracted) |
-| [dart-analyzer](./dart-analyzer)                   | Dart/Flutter          | [Dart SDK](https://dart.dev/tools/dart-analyze)                          |
+| [dart-analyzer](./dart-analyzer)                   | Dart/Flutter          | [Dart SDK](https://dart.dev/tools/dart-analyze)                               |
 
 ## Getting Started
 
@@ -265,18 +271,18 @@ The `.lsp.json` file configures the language server:
 
 **Optional Fields**
 
-| Field                   | Type     | Description                                                     |
-| ----------------------- | -------- | --------------------------------------------------------------- |
-| `args`                  | string[] | Arguments passed to the command                                 |
-| `transport`             | string   | Communication method: `"stdio"` (default) or `"socket"`         |
-| `env`                   | object   | Environment variables to set when starting the server           |
-| `initializationOptions` | object   | Options passed during LSP initialization                        |
-| `settings`              | object   | Server-specific settings via `workspace/didChangeConfiguration` |
-| `workspaceFolder`       | string   | Workspace folder path for the server                            |
-| `startupTimeout`        | number   | Max time to wait for server startup (milliseconds)              |
-| `shutdownTimeout`       | number   | Max time to wait for graceful shutdown (milliseconds)           |
-| `restartOnCrash`        | boolean  | Whether to automatically restart the server if it crashes       |
-| `maxRestarts`           | number   | Max restart attempts before giving up (default: 3)              |
+| Field                   | Type     | Description                                                       |
+| ----------------------- | -------- | ----------------------------------------------------------------- |
+| `args`                  | string[] | Arguments passed to the command                                   |
+| `transport`             | string   | Communication method: `"stdio"` (default) or `"socket"`           |
+| `env`                   | object   | Environment variables to set when starting the server             |
+| `initializationOptions` | object   | Options passed during LSP initialization                          |
+| `settings`              | object   | Server-specific settings via `workspace/didChangeConfiguration`   |
+| `workspaceFolder`       | string   | Workspace folder path for the server                              |
+| `startupTimeout`        | number   | Max time to wait for server startup (milliseconds)                |
+| `shutdownTimeout`       | number   | Max time to wait for graceful shutdown (milliseconds)             |
+| `restartOnCrash`        | boolean  | Whether to automatically restart the server if it crashes         |
+| `maxRestarts`           | number   | Max restart attempts before giving up (default: 3)                |
 | `loggingConfig`         | object   | Debug logging configuration (see [Debug Logging](#debug-logging)) |
 
 </details>
@@ -292,6 +298,9 @@ The `.lsp.json` file configures the language server:
     "command": "gopls",
     "extensionToLanguage": {
       ".go": "go"
+    },
+    "loggingConfig": {
+      "args": ["-rpc.trace", "-logfile", "${CLAUDE_PLUGIN_LSP_LOG_FILE}"]
     }
   }
 }
@@ -306,7 +315,9 @@ The `.lsp.json` file configures the language server:
   "version": "1.0.0",
   "author": {
     "name": "Your Name"
-  }
+  },
+  "hooks": "./hooks/hooks.json",
+  "lspServers": "./.lsp.json"
 }
 ```
 
@@ -346,13 +357,13 @@ Logs are written to `~/.claude/debug/`.
 
 **Plugins with logging pre-configured:**
 
-| Plugin | Method |
-|--------|--------|
-| gopls | `-rpc.trace` + logfile |
-| clangd | `--log=verbose` |
-| omnisharp | `-v` verbose flag |
+| Plugin        | Method                       |
+| ------------- | ---------------------------- |
+| gopls         | `-rpc.trace` + logfile       |
+| clangd        | `--log=verbose`              |
+| omnisharp     | `-v` verbose flag            |
 | rust-analyzer | `RA_LOG` + `RA_LOG_FILE` env |
-| solargraph | `SOLARGRAPH_LOG` env |
+| solargraph    | `SOLARGRAPH_LOG` env         |
 | dart-analyzer | `--instrumentation-log-file` |
 
 **Not supported** (use LSP trace settings instead): vtsls, pyright, jdtls, intelephense, kotlin-language-server, vscode-html-css
