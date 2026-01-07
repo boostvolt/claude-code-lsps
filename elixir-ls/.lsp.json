@@ -1,0 +1,9 @@
+{
+  "elixir": {
+    "command": "elixir-ls",
+    "extensionToLanguage": {
+      ".ex": "elixir",
+      ".exs": "elixir"
+    }
+  }
+}

@@ -29,21 +29,27 @@ The Language Server Protocol provides IDE-like intelligence to Claude Code. On s
 
 ## Available Plugins
 
-| Plugin                                             | Language              | LSP                                                                           |
-| -------------------------------------------------- | --------------------- | ----------------------------------------------------------------------------- |
-| [gopls](./gopls)                                   | Go                    | [gopls](https://github.com/golang/tools/tree/master/gopls)                    |
-| [vtsls](./vtsls)                                   | TypeScript/JavaScript | [vtsls](https://github.com/yioneko/vtsls)                                     |
-| [pyright](./pyright)                               | Python                | [pyright](https://github.com/microsoft/pyright)                               |
-| [jdtls](./jdtls)                                   | Java                  | [jdtls](https://github.com/eclipse-jdtls/eclipse.jdt.ls)                      |
-| [clangd](./clangd)                                 | C/C++                 | [clangd](https://clangd.llvm.org/)                                            |
-| [omnisharp](./omnisharp)                           | C#                    | [OmniSharp](https://github.com/OmniSharp/omnisharp-roslyn)                    |
-| [intelephense](./intelephense)                     | PHP                   | [Intelephense](https://github.com/bmewburn/intelephense-docs)                 |
-| [kotlin-language-server](./kotlin-language-server) | Kotlin                | [kotlin-language-server](https://github.com/fwcd/kotlin-language-server)      |
-| [rust-analyzer](./rust-analyzer)                   | Rust                  | [rust-analyzer](https://github.com/rust-lang/rust-analyzer)                   |
-| [solargraph](./solargraph)                         | Ruby                  | [Solargraph](https://github.com/castwide/solargraph)                          |
-| [vscode-html-css](./vscode-html-css)               | HTML/CSS              | [vscode-langservers](https://github.com/hrsh7th/vscode-langservers-extracted) |
-| [dart-analyzer](./dart-analyzer)                   | Dart/Flutter          | [Dart SDK](https://dart.dev/tools/dart-analyze)                               |
-| [sourcekit-lsp](./sourcekit-lsp)                   | Swift                 | [sourcekit-lsp](https://github.com/swiftlang/sourcekit-lsp)                   |
+| Plugin                                             | Language              | Extensions                                  | LSP                                                                              |
+| -------------------------------------------------- | --------------------- | ------------------------------------------- | -------------------------------------------------------------------------------- |
+| [bash-language-server](./bash-language-server)     | Bash/Shell            | `.sh` `.bash` `.zsh` `.ksh`                 | [bash-language-server](https://github.com/bash-lsp/bash-language-server)         |
+| [clangd](./clangd)                                 | C/C++                 | `.c` `.h` `.cpp` `.hpp` `.cc` `.cxx` `.hxx` | [clangd](https://clangd.llvm.org/)                                               |
+| [dart-analyzer](./dart-analyzer)                   | Dart/Flutter          | `.dart`                                     | [Dart SDK](https://dart.dev/tools/dart-analyze)                                  |
+| [elixir-ls](./elixir-ls)                           | Elixir                | `.ex` `.exs`                                | [elixir-ls](https://github.com/elixir-lsp/elixir-ls)                             |
+| [gopls](./gopls)                                   | Go                    | `.go`                                       | [gopls](https://github.com/golang/tools/tree/master/gopls)                       |
+| [intelephense](./intelephense)                     | PHP                   | `.php` `.phtml`                             | [Intelephense](https://github.com/bmewburn/intelephense-docs)                    |
+| [jdtls](./jdtls)                                   | Java                  | `.java`                                     | [jdtls](https://github.com/eclipse-jdtls/eclipse.jdt.ls)                         |
+| [kotlin-language-server](./kotlin-language-server) | Kotlin                | `.kt` `.kts`                                | [kotlin-language-server](https://github.com/fwcd/kotlin-language-server)         |
+| [lua-language-server](./lua-language-server)       | Lua                   | `.lua`                                      | [lua-language-server](https://github.com/LuaLS/lua-language-server)              |
+| [omnisharp](./omnisharp)                           | C#                    | `.cs` `.csx`                                | [OmniSharp](https://github.com/OmniSharp/omnisharp-roslyn)                       |
+| [pyright](./pyright)                               | Python                | `.py` `.pyi`                                | [pyright](https://github.com/microsoft/pyright)                                  |
+| [rust-analyzer](./rust-analyzer)                   | Rust                  | `.rs`                                       | [rust-analyzer](https://github.com/rust-lang/rust-analyzer)                      |
+| [solargraph](./solargraph)                         | Ruby                  | `.rb` `.rake` `.gemspec`                    | [Solargraph](https://github.com/castwide/solargraph)                             |
+| [sourcekit-lsp](./sourcekit-lsp)                   | Swift                 | `.swift`                                    | [sourcekit-lsp](https://github.com/swiftlang/sourcekit-lsp)                      |
+| [terraform-ls](./terraform-ls)                     | Terraform             | `.tf` `.tfvars`                             | [terraform-ls](https://github.com/hashicorp/terraform-ls)                        |
+| [vscode-html-css](./vscode-html-css)               | HTML/CSS              | `.html` `.htm` `.css` `.scss` `.less`       | [vscode-langservers](https://github.com/hrsh7th/vscode-langservers-extracted)    |
+| [vtsls](./vtsls)                                   | TypeScript/JavaScript | `.ts` `.tsx` `.js` `.jsx` `.mjs` `.cjs`     | [vtsls](https://github.com/yioneko/vtsls)                                        |
+| [yaml-language-server](./yaml-language-server)     | YAML                  | `.yaml` `.yml`                              | [yaml-language-server](https://github.com/redhat-developer/yaml-language-server) |
+| [zls](./zls)                                       | Zig                   | `.zig` `.zon`                               | [zls](https://github.com/zigtools/zls)                                           |
 
 ## Getting Started
 
@@ -59,19 +65,25 @@ claude
 Install individual plugins:
 
 ```bash
-/plugin install gopls@claude-code-lsps
-/plugin install vtsls@claude-code-lsps
-/plugin install pyright@claude-code-lsps
-/plugin install jdtls@claude-code-lsps
+/plugin install bash-language-server@claude-code-lsps
 /plugin install clangd@claude-code-lsps
-/plugin install omnisharp@claude-code-lsps
+/plugin install dart-analyzer@claude-code-lsps
+/plugin install elixir-ls@claude-code-lsps
+/plugin install gopls@claude-code-lsps
 /plugin install intelephense@claude-code-lsps
+/plugin install jdtls@claude-code-lsps
 /plugin install kotlin-language-server@claude-code-lsps
+/plugin install lua-language-server@claude-code-lsps
+/plugin install omnisharp@claude-code-lsps
+/plugin install pyright@claude-code-lsps
 /plugin install rust-analyzer@claude-code-lsps
 /plugin install solargraph@claude-code-lsps
-/plugin install vscode-html-css@claude-code-lsps
-/plugin install dart-analyzer@claude-code-lsps
 /plugin install sourcekit-lsp@claude-code-lsps
+/plugin install terraform-ls@claude-code-lsps
+/plugin install vscode-html-css@claude-code-lsps
+/plugin install vtsls@claude-code-lsps
+/plugin install yaml-language-server@claude-code-lsps
+/plugin install zls@claude-code-lsps
 ```
 
 Or browse and install interactively:
@@ -87,44 +99,17 @@ Or browse and install interactively:
 Each plugin will attempt to auto-install its LSP server on first use. If auto-install fails, use the manual instructions below.
 
 <details>
-<summary><strong>Go (gopls)</strong></summary>
+<summary><strong>Bash/Shell (bash-language-server)</strong></summary>
 
 ```bash
-go install golang.org/x/tools/gopls@latest
+brew install bash-language-server
 ```
 
-Ensure `~/go/bin` is in your PATH.
-
-</details>
-
-<details>
-<summary><strong>TypeScript/JavaScript (vtsls)</strong></summary>
+Or via npm:
 
 ```bash
-npm install -g @vtsls/language-server typescript
+npm install -g bash-language-server
 ```
-
-</details>
-
-<details>
-<summary><strong>Python (pyright)</strong></summary>
-
-```bash
-pip install pyright
-```
-
-</details>
-
-<details>
-<summary><strong>Java (jdtls)</strong></summary>
-
-```bash
-brew install jdtls
-```
-
-Or download manually from [Eclipse JDT Language Server](http://download.eclipse.org/jdtls/snapshots/).
-
-Requires Java 21+ runtime.
 
 </details>
 
@@ -159,57 +144,6 @@ dotnet tool install -g csharp-ls
 </details>
 
 <details>
-<summary><strong>PHP (intelephense)</strong></summary>
-
-```bash
-npm install -g intelephense
-```
-
-</details>
-
-<details>
-<summary><strong>Kotlin (kotlin-language-server)</strong></summary>
-
-```bash
-brew install kotlin-language-server
-```
-
-</details>
-
-<details>
-<summary><strong>Rust (rust-analyzer)</strong></summary>
-
-```bash
-brew install rust-analyzer
-```
-
-Or via rustup:
-
-```bash
-rustup component add rust-analyzer
-```
-
-</details>
-
-<details>
-<summary><strong>Ruby (solargraph)</strong></summary>
-
-```bash
-gem install solargraph
-```
-
-</details>
-
-<details>
-<summary><strong>HTML/CSS (vscode-html-css)</strong></summary>
-
-```bash
-npm install -g vscode-langservers-extracted
-```
-
-</details>
-
-<details>
 <summary><strong>Dart/Flutter (dart-analyzer)</strong></summary>
 
 Install Dart SDK:
@@ -230,6 +164,116 @@ Ensure `dart` is in your PATH.
 </details>
 
 <details>
+<summary><strong>Elixir (elixir-ls)</strong></summary>
+
+```bash
+brew install elixir-ls
+```
+
+Requires Elixir to be installed:
+
+```bash
+brew install elixir
+```
+
+</details>
+
+<details>
+<summary><strong>Go (gopls)</strong></summary>
+
+```bash
+go install golang.org/x/tools/gopls@latest
+```
+
+Ensure `~/go/bin` is in your PATH.
+
+</details>
+
+<details>
+<summary><strong>HTML/CSS (vscode-html-css)</strong></summary>
+
+```bash
+npm install -g vscode-langservers-extracted
+```
+
+</details>
+
+<details>
+<summary><strong>Java (jdtls)</strong></summary>
+
+```bash
+brew install jdtls
+```
+
+Or download manually from [Eclipse JDT Language Server](http://download.eclipse.org/jdtls/snapshots/).
+
+Requires Java 21+ runtime.
+
+</details>
+
+<details>
+<summary><strong>Kotlin (kotlin-language-server)</strong></summary>
+
+```bash
+brew install kotlin-language-server
+```
+
+</details>
+
+<details>
+<summary><strong>Lua (lua-language-server)</strong></summary>
+
+```bash
+brew install lua-language-server
+```
+
+Or download from [GitHub releases](https://github.com/LuaLS/lua-language-server/releases).
+
+</details>
+
+<details>
+<summary><strong>PHP (intelephense)</strong></summary>
+
+```bash
+npm install -g intelephense
+```
+
+</details>
+
+<details>
+<summary><strong>Python (pyright)</strong></summary>
+
+```bash
+pip install pyright
+```
+
+</details>
+
+<details>
+<summary><strong>Ruby (solargraph)</strong></summary>
+
+```bash
+gem install solargraph
+```
+
+</details>
+
+<details>
+<summary><strong>Rust (rust-analyzer)</strong></summary>
+
+```bash
+brew install rust-analyzer
+```
+
+Or via rustup:
+
+```bash
+rustup component add rust-analyzer
+```
+
+</details>
+
+<details>
 <summary><strong>Swift (sourcekit-lsp)</strong></summary>
 
 sourcekit-lsp is bundled with Xcode. Install Xcode from the App Store:
@@ -240,6 +284,52 @@ xcrun --find sourcekit-lsp
 ```
 
 Or install a Swift toolchain from [swift.org/install](https://swift.org/install/).
+
+</details>
+
+<details>
+<summary><strong>Terraform (terraform-ls)</strong></summary>
+
+```bash
+brew install terraform-ls
+```
+
+Or download from [GitHub releases](https://github.com/hashicorp/terraform-ls/releases).
+
+</details>
+
+<details>
+<summary><strong>TypeScript/JavaScript (vtsls)</strong></summary>
+
+```bash
+npm install -g @vtsls/language-server typescript
+```
+
+</details>
+
+<details>
+<summary><strong>YAML (yaml-language-server)</strong></summary>
+
+```bash
+brew install yaml-language-server
+```
+
+Or via npm:
+
+```bash
+npm install -g yaml-language-server
+```
+
+</details>
+
+<details>
+<summary><strong>Zig (zls)</strong></summary>
+
+```bash
+brew install zls
+```
+
+Requires Zig to be installed. Download from [ziglang.org](https://ziglang.org/download/).
 
 </details>
 

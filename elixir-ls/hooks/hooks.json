@@ -1,0 +1,16 @@
+{
+  "description": "Check for elixir-ls installation on session start",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/check-elixir-ls.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

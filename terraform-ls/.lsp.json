@@ -1,0 +1,10 @@
+{
+  "terraform": {
+    "command": "terraform-ls",
+    "args": ["serve"],
+    "extensionToLanguage": {
+      ".tf": "terraform",
+      ".tfvars": "terraform-vars"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "description": "Check for lua-language-server installation on session start",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/check-lua-language-server.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

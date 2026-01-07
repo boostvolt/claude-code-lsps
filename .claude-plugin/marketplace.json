@@ -10,45 +10,12 @@
   },
   "plugins": [
     {
-      "name": "gopls",
+      "name": "bash-language-server",
       "version": "1.0.0",
-      "source": "./gopls",
-      "description": "Go language server",
+      "source": "./bash-language-server",
+      "description": "Bash language server",
       "category": "development",
-      "tags": ["go", "lsp"],
-      "author": {
-        "name": "Jan Kott"
-      }
-    },
-    {
-      "name": "vtsls",
-      "version": "1.0.0",
-      "source": "./vtsls",
-      "description": "TypeScript/JavaScript language server",
-      "category": "development",
-      "tags": ["typescript", "javascript", "lsp"],
-      "author": {
-        "name": "Jan Kott"
-      }
-    },
-    {
-      "name": "pyright",
-      "version": "1.0.0",
-      "source": "./pyright",
-      "description": "Python language server",
-      "category": "development",
-      "tags": ["python", "lsp"],
-      "author": {
-        "name": "Jan Kott"
-      }
-    },
-    {
-      "name": "jdtls",
-      "version": "1.0.0",
-      "source": "./jdtls",
-      "description": "Java language server",
-      "category": "development",
-      "tags": ["java", "lsp"],
+      "tags": ["bash", "shell", "sh", "zsh", "lsp"],
       "author": {
         "name": "Jan Kott"
       }
@@ -65,12 +32,34 @@
       }
     },
     {
-      "name": "omnisharp",
+      "name": "dart-analyzer",
       "version": "1.0.0",
-      "source": "./omnisharp",
-      "description": "C# language server",
+      "source": "./dart-analyzer",
+      "description": "Dart/Flutter language server",
       "category": "development",
-      "tags": ["csharp", "dotnet", "lsp"],
+      "tags": ["dart", "flutter", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "elixir-ls",
+      "version": "1.0.0",
+      "source": "./elixir-ls",
+      "description": "Elixir language server",
+      "category": "development",
+      "tags": ["elixir", "erlang", "beam", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "gopls",
+      "version": "1.0.0",
+      "source": "./gopls",
+      "description": "Go language server",
+      "category": "development",
+      "tags": ["go", "lsp"],
       "author": {
         "name": "Jan Kott"
       }
@@ -87,12 +76,56 @@
       }
     },
     {
+      "name": "jdtls",
+      "version": "1.0.0",
+      "source": "./jdtls",
+      "description": "Java language server",
+      "category": "development",
+      "tags": ["java", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
       "name": "kotlin-language-server",
       "version": "1.0.0",
       "source": "./kotlin-language-server",
       "description": "Kotlin language server",
       "category": "development",
       "tags": ["kotlin", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "lua-language-server",
+      "version": "1.0.0",
+      "source": "./lua-language-server",
+      "description": "Lua language server",
+      "category": "development",
+      "tags": ["lua", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "omnisharp",
+      "version": "1.0.0",
+      "source": "./omnisharp",
+      "description": "C# language server",
+      "category": "development",
+      "tags": ["csharp", "dotnet", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "pyright",
+      "version": "1.0.0",
+      "source": "./pyright",
+      "description": "Python language server",
+      "category": "development",
+      "tags": ["python", "lsp"],
       "author": {
         "name": "Jan Kott"
       }
@@ -120,6 +153,28 @@
       }
     },
     {
+      "name": "sourcekit-lsp",
+      "version": "1.0.0",
+      "source": "./sourcekit-lsp",
+      "description": "Swift language server",
+      "category": "development",
+      "tags": ["swift", "ios", "macos", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "terraform-ls",
+      "version": "1.0.0",
+      "source": "./terraform-ls",
+      "description": "Terraform language server",
+      "category": "development",
+      "tags": ["terraform", "hcl", "devops", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
       "name": "vscode-html-css",
       "version": "1.0.0",
       "source": "./vscode-html-css",
@@ -131,23 +186,34 @@
       }
     },
     {
-      "name": "dart-analyzer",
+      "name": "vtsls",
       "version": "1.0.0",
-      "source": "./dart-analyzer",
-      "description": "Dart/Flutter language server",
+      "source": "./vtsls",
+      "description": "TypeScript/JavaScript language server",
       "category": "development",
-      "tags": ["dart", "flutter", "lsp"],
+      "tags": ["typescript", "javascript", "lsp"],
       "author": {
         "name": "Jan Kott"
       }
     },
     {
-      "name": "sourcekit-lsp",
+      "name": "yaml-language-server",
       "version": "1.0.0",
-      "source": "./sourcekit-lsp",
-      "description": "Swift language server",
+      "source": "./yaml-language-server",
+      "description": "YAML language server",
       "category": "development",
-      "tags": ["swift", "ios", "macos", "lsp"],
+      "tags": ["yaml", "yml", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "zls",
+      "version": "1.0.0",
+      "source": "./zls",
+      "description": "Zig language server",
+      "category": "development",
+      "tags": ["zig", "lsp"],
       "author": {
         "name": "Jan Kott"
       }
