@@ -4,6 +4,9 @@
     "extensionToLanguage": {
       ".zig": "zig",
       ".zon": "zig"
+    },
+    "loggingConfig": {
+      "args": ["--log-level=debug", "--log-file=${CLAUDE_PLUGIN_LSP_LOG_FILE}"]
     }
   }
 }

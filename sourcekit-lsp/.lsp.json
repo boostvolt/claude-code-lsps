@@ -4,6 +4,9 @@
     "args": ["sourcekit-lsp"],
     "extensionToLanguage": {
       ".swift": "swift"
+    },
+    "loggingConfig": {
+      "args": ["--log-level", "debug"]
     }
   }
 }
