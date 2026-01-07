@@ -33,20 +33,23 @@ The Language Server Protocol provides IDE-like intelligence to Claude Code. On s
 | -------------------------------------------------- | --------------------- | ------------------------------------------- | -------------------------------------------------------------------------------- |
 | [bash-language-server](./bash-language-server)     | Bash/Shell            | `.sh` `.bash` `.zsh` `.ksh`                 | [bash-language-server](https://github.com/bash-lsp/bash-language-server)         |
 | [clangd](./clangd)                                 | C/C++                 | `.c` `.h` `.cpp` `.hpp` `.cc` `.cxx` `.hxx` | [clangd](https://clangd.llvm.org/)                                               |
+| [clojure-lsp](./clojure-lsp)                       | Clojure               | `.clj` `.cljs` `.cljc` `.edn`               | [clojure-lsp](https://github.com/clojure-lsp/clojure-lsp)                        |
 | [dart-analyzer](./dart-analyzer)                   | Dart/Flutter          | `.dart`                                     | [Dart SDK](https://dart.dev/tools/dart-analyze)                                  |
 | [elixir-ls](./elixir-ls)                           | Elixir                | `.ex` `.exs`                                | [elixir-ls](https://github.com/elixir-lsp/elixir-ls)                             |
+| [gleam](./gleam)                                   | Gleam                 | `.gleam`                                    | [gleam](https://gleam.run/)                                                      |
 | [gopls](./gopls)                                   | Go                    | `.go`                                       | [gopls](https://github.com/golang/tools/tree/master/gopls)                       |
 | [intelephense](./intelephense)                     | PHP                   | `.php` `.phtml`                             | [Intelephense](https://github.com/bmewburn/intelephense-docs)                    |
 | [jdtls](./jdtls)                                   | Java                  | `.java`                                     | [jdtls](https://github.com/eclipse-jdtls/eclipse.jdt.ls)                         |
 | [kotlin-language-server](./kotlin-language-server) | Kotlin                | `.kt` `.kts`                                | [kotlin-language-server](https://github.com/fwcd/kotlin-language-server)         |
 | [lua-language-server](./lua-language-server)       | Lua                   | `.lua`                                      | [lua-language-server](https://github.com/LuaLS/lua-language-server)              |
+| [nixd](./nixd)                                     | Nix                   | `.nix`                                      | [nixd](https://github.com/nix-community/nixd)                                    |
+| [ocaml-lsp](./ocaml-lsp)                           | OCaml                 | `.ml` `.mli`                                | [ocaml-lsp](https://github.com/ocaml/ocaml-lsp)                                  |
 | [omnisharp](./omnisharp)                           | C#                    | `.cs` `.csx`                                | [OmniSharp](https://github.com/OmniSharp/omnisharp-roslyn)                       |
 | [pyright](./pyright)                               | Python                | `.py` `.pyi`                                | [pyright](https://github.com/microsoft/pyright)                                  |
 | [rust-analyzer](./rust-analyzer)                   | Rust                  | `.rs`                                       | [rust-analyzer](https://github.com/rust-lang/rust-analyzer)                      |
 | [solargraph](./solargraph)                         | Ruby                  | `.rb` `.rake` `.gemspec`                    | [Solargraph](https://github.com/castwide/solargraph)                             |
 | [sourcekit-lsp](./sourcekit-lsp)                   | Swift                 | `.swift`                                    | [sourcekit-lsp](https://github.com/swiftlang/sourcekit-lsp)                      |
 | [terraform-ls](./terraform-ls)                     | Terraform             | `.tf` `.tfvars`                             | [terraform-ls](https://github.com/hashicorp/terraform-ls)                        |
-| [vscode-html-css](./vscode-html-css)               | HTML/CSS              | `.html` `.htm` `.css` `.scss` `.less`       | [vscode-langservers](https://github.com/hrsh7th/vscode-langservers-extracted)    |
 | [vtsls](./vtsls)                                   | TypeScript/JavaScript | `.ts` `.tsx` `.js` `.jsx` `.mjs` `.cjs`     | [vtsls](https://github.com/yioneko/vtsls)                                        |
 | [yaml-language-server](./yaml-language-server)     | YAML                  | `.yaml` `.yml`                              | [yaml-language-server](https://github.com/redhat-developer/yaml-language-server) |
 | [zls](./zls)                                       | Zig                   | `.zig` `.zon`                               | [zls](https://github.com/zigtools/zls)                                           |
@@ -67,20 +70,23 @@ Install individual plugins:
 ```bash
 /plugin install bash-language-server@claude-code-lsps
 /plugin install clangd@claude-code-lsps
+/plugin install clojure-lsp@claude-code-lsps
 /plugin install dart-analyzer@claude-code-lsps
 /plugin install elixir-ls@claude-code-lsps
+/plugin install gleam@claude-code-lsps
 /plugin install gopls@claude-code-lsps
 /plugin install intelephense@claude-code-lsps
 /plugin install jdtls@claude-code-lsps
 /plugin install kotlin-language-server@claude-code-lsps
 /plugin install lua-language-server@claude-code-lsps
+/plugin install nixd@claude-code-lsps
+/plugin install ocaml-lsp@claude-code-lsps
 /plugin install omnisharp@claude-code-lsps
 /plugin install pyright@claude-code-lsps
 /plugin install rust-analyzer@claude-code-lsps
 /plugin install solargraph@claude-code-lsps
 /plugin install sourcekit-lsp@claude-code-lsps
 /plugin install terraform-ls@claude-code-lsps
-/plugin install vscode-html-css@claude-code-lsps
 /plugin install vtsls@claude-code-lsps
 /plugin install yaml-language-server@claude-code-lsps
 /plugin install zls@claude-code-lsps
@@ -144,6 +150,17 @@ dotnet tool install -g csharp-ls
 </details>
 
 <details>
+<summary><strong>Clojure (clojure-lsp)</strong></summary>
+
+```bash
+brew install clojure-lsp/brew/clojure-lsp-native
+```
+
+Or download from [GitHub releases](https://github.com/clojure-lsp/clojure-lsp/releases).
+
+</details>
+
+<details>
 <summary><strong>Dart/Flutter (dart-analyzer)</strong></summary>
 
 Install Dart SDK:
@@ -179,6 +196,17 @@ brew install elixir
 </details>
 
 <details>
+<summary><strong>Gleam (gleam)</strong></summary>
+
+```bash
+brew install gleam
+```
+
+Or download from [GitHub releases](https://github.com/gleam-lang/gleam/releases).
+
+</details>
+
+<details>
 <summary><strong>Go (gopls)</strong></summary>
 
 ```bash
@@ -186,15 +214,6 @@ go install golang.org/x/tools/gopls@latest
 ```
 
 Ensure `~/go/bin` is in your PATH.
-
-</details>
-
-<details>
-<summary><strong>HTML/CSS (vscode-html-css)</strong></summary>
-
-```bash
-npm install -g vscode-langservers-extracted
-```
 
 </details>
 
@@ -228,6 +247,33 @@ brew install lua-language-server
 ```
 
 Or download from [GitHub releases](https://github.com/LuaLS/lua-language-server/releases).
+
+</details>
+
+<details>
+<summary><strong>Nix (nixd)</strong></summary>
+
+```bash
+nix profile install nixpkgs#nixd
+```
+
+Requires Nix to be installed. See [nixos.org](https://nixos.org/download/).
+
+</details>
+
+<details>
+<summary><strong>OCaml (ocaml-lsp)</strong></summary>
+
+```bash
+opam install ocaml-lsp-server
+```
+
+Requires opam to be installed:
+
+```bash
+brew install opam
+opam init
+```
 
 </details>
 
@@ -467,6 +513,7 @@ Logs are written to `~/.claude/debug/`.
 | ---------------------- | ---------------------------------- |
 | bash-language-server   | `BASH_IDE_LOG_LEVEL` env           |
 | clangd                 | `--log=verbose`                    |
+| clojure-lsp            | `--trace-level verbose`            |
 | dart-analyzer          | `--instrumentation-log-file`       |
 | gopls                  | `-rpc.trace` + logfile             |
 | lua-language-server    | `--loglevel=trace` + `--logpath`   |
@@ -477,7 +524,7 @@ Logs are written to `~/.claude/debug/`.
 | terraform-ls           | `TF_LOG` + `TF_LOG_PATH` env       |
 | zls                    | `--log-level` + `--log-file`       |
 
-**Not supported** (use LSP trace settings instead): elixir-ls, intelephense, jdtls, kotlin-language-server, pyright, vscode-html-css, vtsls, yaml-language-server
+**Not supported** (use LSP trace settings instead): elixir-ls, gleam, intelephense, jdtls, kotlin-language-server, nixd, ocaml-lsp, pyright, vtsls, yaml-language-server
 
 ## License
 

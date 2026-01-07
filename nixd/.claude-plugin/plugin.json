@@ -1,6 +1,6 @@
 {
-  "name": "vscode-html-css",
-  "description": "HTML/CSS language server",
+  "name": "nixd",
+  "description": "Nix language server",
   "version": "1.0.0",
   "author": {
     "name": "Jan Kott"

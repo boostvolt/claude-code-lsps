@@ -32,6 +32,17 @@
       }
     },
     {
+      "name": "clojure-lsp",
+      "version": "1.0.0",
+      "source": "./clojure-lsp",
+      "description": "Clojure language server",
+      "category": "development",
+      "tags": ["clojure", "clojurescript", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
       "name": "dart-analyzer",
       "version": "1.0.0",
       "source": "./dart-analyzer",
@@ -49,6 +60,17 @@
       "description": "Elixir language server",
       "category": "development",
       "tags": ["elixir", "erlang", "beam", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "gleam",
+      "version": "1.0.0",
+      "source": "./gleam",
+      "description": "Gleam language server",
+      "category": "development",
+      "tags": ["gleam", "beam", "lsp"],
       "author": {
         "name": "Jan Kott"
       }
@@ -104,6 +126,28 @@
       "description": "Lua language server",
       "category": "development",
       "tags": ["lua", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "nixd",
+      "version": "1.0.0",
+      "source": "./nixd",
+      "description": "Nix language server",
+      "category": "development",
+      "tags": ["nix", "nixos", "lsp"],
+      "author": {
+        "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "ocaml-lsp",
+      "version": "1.0.0",
+      "source": "./ocaml-lsp",
+      "description": "OCaml language server",
+      "category": "development",
+      "tags": ["ocaml", "ml", "lsp"],
       "author": {
         "name": "Jan Kott"
       }
@@ -170,17 +214,6 @@
       "description": "Terraform language server",
       "category": "development",
       "tags": ["terraform", "hcl", "devops", "lsp"],
-      "author": {
-        "name": "Jan Kott"
-      }
-    },
-    {
-      "name": "vscode-html-css",
-      "version": "1.0.0",
-      "source": "./vscode-html-css",
-      "description": "HTML/CSS language server",
-      "category": "development",
-      "tags": ["html", "css", "scss", "less", "lsp"],
       "author": {
         "name": "Jan Kott"
       }
