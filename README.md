@@ -153,7 +153,7 @@ dotnet tool install -g csharp-ls
 <summary><strong>Clojure (clojure-lsp)</strong></summary>
 
 ```bash
-brew install clojure-lsp/brew/clojure-lsp-native
+brew install clojure-lsp
 ```
 
 Or download from [GitHub releases](https://github.com/clojure-lsp/clojure-lsp/releases).
