@@ -463,16 +463,21 @@ Logs are written to `~/.claude/debug/`.
 
 **Plugins with logging pre-configured:**
 
-| Plugin        | Method                       |
-| ------------- | ---------------------------- |
-| gopls         | `-rpc.trace` + logfile       |
-| clangd        | `--log=verbose`              |
-| omnisharp     | `-v` verbose flag            |
-| rust-analyzer | `RA_LOG` + `RA_LOG_FILE` env |
-| solargraph    | `SOLARGRAPH_LOG` env         |
-| dart-analyzer | `--instrumentation-log-file` |
+| Plugin                 | Method                             |
+| ---------------------- | ---------------------------------- |
+| bash-language-server   | `BASH_IDE_LOG_LEVEL` env           |
+| clangd                 | `--log=verbose`                    |
+| dart-analyzer          | `--instrumentation-log-file`       |
+| gopls                  | `-rpc.trace` + logfile             |
+| lua-language-server    | `--loglevel=trace` + `--logpath`   |
+| omnisharp              | `-v` verbose flag                  |
+| rust-analyzer          | `RA_LOG` + `RA_LOG_FILE` env       |
+| solargraph             | `SOLARGRAPH_LOG` env               |
+| sourcekit-lsp          | `--log-level debug`                |
+| terraform-ls           | `TF_LOG` + `TF_LOG_PATH` env       |
+| zls                    | `--log-level` + `--log-file`       |
 
-**Not supported** (use LSP trace settings instead): vtsls, pyright, jdtls, intelephense, kotlin-language-server, vscode-html-css
+**Not supported** (use LSP trace settings instead): elixir-ls, intelephense, jdtls, kotlin-language-server, pyright, vscode-html-css, vtsls, yaml-language-server
 
 ## License
 

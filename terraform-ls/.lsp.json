@@ -5,6 +5,12 @@
     "extensionToLanguage": {
       ".tf": "terraform",
       ".tfvars": "terraform-vars"
+    },
+    "loggingConfig": {
+      "env": {
+        "TF_LOG": "DEBUG",
+        "TF_LOG_PATH": "${CLAUDE_PLUGIN_LSP_LOG_FILE}"
+      }
     }
   }
 }
