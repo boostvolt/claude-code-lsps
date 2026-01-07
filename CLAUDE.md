@@ -13,7 +13,7 @@ Each plugin is a self-contained directory with this structure:
 ```
 <plugin-name>/
 ├── .claude-plugin/
-│   └── plugin.json      # Plugin metadata (name, version, author)
+│   └── plugin.json      # Plugin metadata + refs to hooks/lspServers
 ├── .lsp.json            # LSP server configuration
 └── hooks/
     ├── hooks.json       # Hook definitions (runs on SessionStart)
@@ -38,7 +38,9 @@ Auto-install scripts that run on session start. Pattern:
 ## Adding a New Plugin
 
 1. Create a new directory with the plugin name
-2. Add `.claude-plugin/plugin.json` with name, description, version, author
+2. Add `.claude-plugin/plugin.json` with name, description, version, author, and refs:
+   - `"hooks": "./hooks/hooks.json"`
+   - `"lspServers": "./.lsp.json"`
 3. Add `.lsp.json` with command and extensionToLanguage mapping
 4. Add `hooks/hooks.json` to run auto-install on SessionStart
 5. Add `hooks/check-<name>.sh` auto-install script
