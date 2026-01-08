@@ -40,7 +40,7 @@ The Language Server Protocol provides IDE-like intelligence to Claude Code. On s
 | [gopls](./gopls)                                   | Go                    | `.go`                                       | [gopls](https://github.com/golang/tools/tree/master/gopls)                       |
 | [intelephense](./intelephense)                     | PHP                   | `.php` `.phtml`                             | [Intelephense](https://github.com/bmewburn/intelephense-docs)                    |
 | [jdtls](./jdtls)                                   | Java                  | `.java`                                     | [jdtls](https://github.com/eclipse-jdtls/eclipse.jdt.ls)                         |
-| [kotlin-language-server](./kotlin-language-server) | Kotlin                | `.kt` `.kts`                                | [kotlin-language-server](https://github.com/fwcd/kotlin-language-server)         |
+| [kotlin-lsp](./kotlin-lsp)                         | Kotlin                | `.kt` `.kts`                                | [kotlin-lsp](https://github.com/Kotlin/kotlin-lsp)                               |
 | [lua-language-server](./lua-language-server)       | Lua                   | `.lua`                                      | [lua-language-server](https://github.com/LuaLS/lua-language-server)              |
 | [nixd](./nixd)                                     | Nix                   | `.nix`                                      | [nixd](https://github.com/nix-community/nixd)                                    |
 | [ocaml-lsp](./ocaml-lsp)                           | OCaml                 | `.ml` `.mli`                                | [ocaml-lsp](https://github.com/ocaml/ocaml-lsp)                                  |
@@ -77,7 +77,7 @@ Install individual plugins:
 /plugin install gopls@claude-code-lsps
 /plugin install intelephense@claude-code-lsps
 /plugin install jdtls@claude-code-lsps
-/plugin install kotlin-language-server@claude-code-lsps
+/plugin install kotlin-lsp@claude-code-lsps
 /plugin install lua-language-server@claude-code-lsps
 /plugin install nixd@claude-code-lsps
 /plugin install ocaml-lsp@claude-code-lsps
@@ -231,11 +231,15 @@ Requires Java 21+ runtime.
 </details>
 
 <details>
-<summary><strong>Kotlin (kotlin-language-server)</strong></summary>
+<summary><strong>Kotlin (kotlin-lsp)</strong></summary>
 
 ```bash
-brew install kotlin-language-server
+brew install JetBrains/utils/kotlin-lsp
 ```
+
+Or download from [GitHub releases](https://github.com/Kotlin/kotlin-lsp/releases).
+
+Requires Java 17+.
 
 </details>
 
@@ -524,7 +528,7 @@ Logs are written to `~/.claude/debug/`.
 | terraform-ls           | `TF_LOG` + `TF_LOG_PATH` env       |
 | zls                    | `--log-level` + `--log-file`       |
 
-**Not supported** (use LSP trace settings instead): elixir-ls, gleam, intelephense, jdtls, kotlin-language-server, nixd, ocaml-lsp, pyright, vtsls, yaml-language-server
+**Not supported** (use LSP trace settings instead): elixir-ls, gleam, intelephense, jdtls, kotlin-lsp, nixd, ocaml-lsp, pyright, vtsls, yaml-language-server
 
 ## License
 
