@@ -8,7 +8,9 @@
       ".hpp": "cpp",
       ".cc": "cpp",
       ".cxx": "cpp",
-      ".hxx": "cpp"
+      ".hxx": "cpp",
+      ".m": "objective-c",
+      ".mm": "objective-cpp"
     },
     "loggingConfig": {
       "args": ["--log=verbose"]
