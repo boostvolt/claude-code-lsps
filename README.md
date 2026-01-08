@@ -32,7 +32,7 @@ The Language Server Protocol provides IDE-like intelligence to Claude Code. On s
 | Plugin                                             | Language              | Extensions                                  | LSP                                                                              |
 | -------------------------------------------------- | --------------------- | ------------------------------------------- | -------------------------------------------------------------------------------- |
 | [bash-language-server](./bash-language-server)     | Bash/Shell            | `.sh` `.bash` `.zsh` `.ksh`                 | [bash-language-server](https://github.com/bash-lsp/bash-language-server)         |
-| [clangd](./clangd)                                 | C/C++                 | `.c` `.h` `.cpp` `.hpp` `.cc` `.cxx` `.hxx` | [clangd](https://clangd.llvm.org/)                                               |
+| [clangd](./clangd)                                 | C/C++/Objective-C     | `.c` `.h` `.cpp` `.hpp` `.cc` `.cxx` `.hxx` `.m` `.mm` | [clangd](https://clangd.llvm.org/)                                               |
 | [clojure-lsp](./clojure-lsp)                       | Clojure               | `.clj` `.cljs` `.cljc` `.edn`               | [clojure-lsp](https://github.com/clojure-lsp/clojure-lsp)                        |
 | [dart-analyzer](./dart-analyzer)                   | Dart/Flutter          | `.dart`                                     | [Dart SDK](https://dart.dev/tools/dart-analyze)                                  |
 | [elixir-ls](./elixir-ls)                           | Elixir                | `.ex` `.exs`                                | [elixir-ls](https://github.com/elixir-lsp/elixir-ls)                             |
@@ -120,7 +120,7 @@ npm install -g bash-language-server
 </details>
 
 <details>
-<summary><strong>C/C++ (clangd)</strong></summary>
+<summary><strong>C/C++/Objective-C (clangd)</strong></summary>
 
 ```bash
 brew install llvm
@@ -131,6 +131,8 @@ Or via Xcode Command Line Tools:
 ```bash
 xcode-select --install
 ```
+
+Supports C, C++, Objective-C (.m), and Objective-C++ (.mm) files.
 
 </details>
 
