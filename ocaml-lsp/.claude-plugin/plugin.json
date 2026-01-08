@@ -5,6 +5,7 @@
   "author": {
     "name": "Jan Kott"
   },
-  "hooks": "./hooks/hooks.json",
-  "lspServers": "./.lsp.json"
+  "license": "MIT",
+  "repository": "https://github.com/boostvolt/claude-code-lsps",
+  "homepage": "https://github.com/boostvolt/claude-code-lsps"
 }

@@ -3,12 +3,6 @@
     "command": "rust-analyzer",
     "extensionToLanguage": {
       ".rs": "rust"
-    },
-    "loggingConfig": {
-      "env": {
-        "RA_LOG": "info",
-        "RA_LOG_FILE": "${CLAUDE_PLUGIN_LSP_LOG_FILE}"
-      }
     }
   }
 }

@@ -3,7 +3,10 @@
   "name": "claude-code-lsps",
   "metadata": {
     "description": "LSP plugins for Claude Code",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "license": "MIT",
+    "repository": "https://github.com/boostvolt/claude-code-lsps",
+    "homepage": "https://github.com/boostvolt/claude-code-lsps"
   },
   "owner": {
     "name": "Jan Kott"
@@ -109,9 +112,9 @@
       }
     },
     {
-      "name": "kotlin-language-server",
+      "name": "kotlin-lsp",
       "version": "1.0.0",
-      "source": "./kotlin-language-server",
+      "source": "./kotlin-lsp",
       "description": "Kotlin language server",
       "category": "development",
       "tags": ["kotlin", "lsp"],

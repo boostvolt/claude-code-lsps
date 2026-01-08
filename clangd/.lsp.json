@@ -11,9 +11,6 @@
       ".hxx": "cpp",
       ".m": "objective-c",
       ".mm": "objective-cpp"
-    },
-    "loggingConfig": {
-      "args": ["--log=verbose"]
     }
   }
 }

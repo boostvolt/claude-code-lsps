@@ -5,9 +5,6 @@
     "extensionToLanguage": {
       ".cs": "csharp",
       ".csx": "csharp"
-    },
-    "loggingConfig": {
-      "args": ["-v"]
     }
   }
 }

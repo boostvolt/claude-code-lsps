@@ -429,19 +429,18 @@ The `.lsp.json` file configures the language server:
 
 **Optional Fields**
 
-| Field                   | Type     | Description                                                       |
-| ----------------------- | -------- | ----------------------------------------------------------------- |
-| `args`                  | string[] | Arguments passed to the command                                   |
-| `transport`             | string   | Communication method: `"stdio"` (default) or `"socket"`           |
-| `env`                   | object   | Environment variables to set when starting the server             |
-| `initializationOptions` | object   | Options passed during LSP initialization                          |
-| `settings`              | object   | Server-specific settings via `workspace/didChangeConfiguration`   |
-| `workspaceFolder`       | string   | Workspace folder path for the server                              |
-| `startupTimeout`        | number   | Max time to wait for server startup (milliseconds)                |
-| `shutdownTimeout`       | number   | Max time to wait for graceful shutdown (milliseconds)             |
-| `restartOnCrash`        | boolean  | Whether to automatically restart the server if it crashes         |
-| `maxRestarts`           | number   | Max restart attempts before giving up (default: 3)                |
-| `loggingConfig`         | object   | Debug logging configuration (see [Debug Logging](#debug-logging)) |
+| Field                   | Type     | Description                                                      |
+| ----------------------- | -------- | ---------------------------------------------------------------- |
+| `args`                  | string[] | Arguments passed to the command                                  |
+| `transport`             | string   | Communication method: `"stdio"` (default) or `"socket"`          |
+| `env`                   | object   | Environment variables to set when starting the server            |
+| `initializationOptions` | object   | Options passed during LSP initialization                         |
+| `settings`              | object   | Server-specific settings via `workspace/didChangeConfiguration`  |
+| `workspaceFolder`       | string   | Workspace folder path for the server                             |
+| `startupTimeout`        | number   | Max time to wait for server startup (milliseconds)               |
+| `shutdownTimeout`       | number   | Max time to wait for graceful shutdown (milliseconds)            |
+| `restartOnCrash`        | boolean  | Whether to automatically restart the server if it crashes        |
+| `maxRestarts`           | number   | Max restart attempts before giving up (default: 3)               |
 
 </details>
 
@@ -456,9 +455,6 @@ The `.lsp.json` file configures the language server:
     "command": "gopls",
     "extensionToLanguage": {
       ".go": "go"
-    },
-    "loggingConfig": {
-      "args": ["-rpc.trace", "-logfile", "${CLAUDE_PLUGIN_LSP_LOG_FILE}"]
     }
   }
 }
@@ -474,8 +470,8 @@ The `.lsp.json` file configures the language server:
   "author": {
     "name": "Your Name"
   },
-  "hooks": "./hooks/hooks.json",
-  "lspServers": "./.lsp.json"
+  "license": "MIT",
+  "repository": "https://github.com/boostvolt/claude-code-lsps"
 }
 ```
 
@@ -502,35 +498,6 @@ The `.lsp.json` file configures the language server:
 </details>
 
 ---
-
-## Debug Logging
-
-Enable verbose LSP logging by running Claude Code with `--enable-lsp-logging`:
-
-```bash
-claude --enable-lsp-logging
-```
-
-Logs are written to `~/.claude/debug/`.
-
-**Plugins with logging pre-configured:**
-
-| Plugin                 | Method                             |
-| ---------------------- | ---------------------------------- |
-| bash-language-server   | `BASH_IDE_LOG_LEVEL` env           |
-| clangd                 | `--log=verbose`                    |
-| clojure-lsp            | `--trace-level verbose`            |
-| dart-analyzer          | `--instrumentation-log-file`       |
-| gopls                  | `-rpc.trace` + logfile             |
-| lua-language-server    | `--loglevel=trace` + `--logpath`   |
-| omnisharp              | `-v` verbose flag                  |
-| rust-analyzer          | `RA_LOG` + `RA_LOG_FILE` env       |
-| solargraph             | `SOLARGRAPH_LOG` env               |
-| sourcekit-lsp          | `--log-level debug`                |
-| terraform-ls           | `TF_LOG` + `TF_LOG_PATH` env       |
-| zls                    | `--log-level` + `--log-file`       |
-
-**Not supported** (use LSP trace settings instead): elixir-ls, gleam, intelephense, jdtls, kotlin-lsp, nixd, ocaml-lsp, pyright, vtsls, yaml-language-server
 
 ## License
 

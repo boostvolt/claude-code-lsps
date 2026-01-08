@@ -3,9 +3,6 @@
     "command": "lua-language-server",
     "extensionToLanguage": {
       ".lua": "lua"
-    },
-    "loggingConfig": {
-      "args": ["--loglevel=trace", "--logpath=${CLAUDE_PLUGIN_LSP_LOG_DIR}"]
     }
   }
 }

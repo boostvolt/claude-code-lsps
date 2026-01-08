@@ -6,11 +6,6 @@
       ".rb": "ruby",
       ".rake": "ruby",
       ".gemspec": "ruby"
-    },
-    "loggingConfig": {
-      "env": {
-        "SOLARGRAPH_LOG": "debug"
-      }
     }
   }
 }

@@ -7,11 +7,6 @@
       ".bash": "shellscript",
       ".zsh": "shellscript",
       ".ksh": "shellscript"
-    },
-    "loggingConfig": {
-      "env": {
-        "BASH_IDE_LOG_LEVEL": "debug"
-      }
     }
   }
 }

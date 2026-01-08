@@ -6,9 +6,6 @@
       ".cljs": "clojurescript",
       ".cljc": "clojure",
       ".edn": "edn"
-    },
-    "loggingConfig": {
-      "args": ["--trace-level", "verbose"]
     }
   }
 }

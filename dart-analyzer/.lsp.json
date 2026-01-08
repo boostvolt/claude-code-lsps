@@ -4,9 +4,6 @@
     "args": ["language-server"],
     "extensionToLanguage": {
       ".dart": "dart"
-    },
-    "loggingConfig": {
-      "args": ["--instrumentation-log-file", "${CLAUDE_PLUGIN_LSP_LOG_FILE}"]
     }
   }
 }
