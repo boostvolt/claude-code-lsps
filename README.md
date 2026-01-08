@@ -6,8 +6,8 @@ A collection of Language Server Protocol (LSP) plugins for [Claude Code](https:/
 
 ## What is LSP Integration?
 
-> [!WARNING]
-> **Known Issue:** LSP integration is broken since ~v2.0.69. Root cause is a race condition where LSP Manager initializes before plugins finish loading ([#14803](https://github.com/anthropics/claude-code/issues/14803), [#13952](https://github.com/anthropics/claude-code/issues/13952)). PRs are in flight to fix this. Workaround: downgrade to v2.0.67 and set `ENABLE_LSP_TOOL=1`.
+> [!NOTE]
+> **LSP Integration:** If you're on v2.0.69 through v2.0.x, LSP integration is broken due to a race condition ([#14803](https://github.com/anthropics/claude-code/issues/14803), [#13952](https://github.com/anthropics/claude-code/issues/13952)). This has been fixed in v2.1.0+. Please upgrade to the latest version.
 
 The Language Server Protocol provides IDE-like intelligence to Claude Code. On startup, Claude Code automatically starts LSP servers from installed plugins and exposes them to Claude in two ways:
 
