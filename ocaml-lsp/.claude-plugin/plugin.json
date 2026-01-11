@@ -1,9 +1,9 @@
 {
   "name": "ocaml-lsp",
   "description": "OCaml language server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
-    "name": "Jan Kott"
+    "name": "Jan Kott and Yishuai Li"
   },
   "license": "MIT",
   "repository": "https://github.com/boostvolt/claude-code-lsps",
