@@ -1,6 +1,7 @@
 {
   "ocaml": {
-    "command": "ocamllsp",
+    "command": "opam",
+    "args": ["exec", "--", "ocamllsp"],
     "extensionToLanguage": {
       ".ml": "ocaml",
       ".mli": "ocaml.interface"
