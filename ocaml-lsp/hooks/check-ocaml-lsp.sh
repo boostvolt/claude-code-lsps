@@ -2,7 +2,7 @@
 
 # Check if opam is installed first
 if ! command -v opam &> /dev/null; then
-    echo "[ocaml-lsp] Not installed. Install opam first, then install ocaml-lsp-server:"
+    echo "[ocaml-lsp] opam not found. Install opam first, then install ocaml-lsp-server:"
     echo "            brew install opam"
     echo "            opam init"
     echo "            opam install ocaml-lsp-server"
