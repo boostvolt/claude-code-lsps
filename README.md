@@ -39,6 +39,7 @@ The Language Server Protocol provides IDE-like intelligence to Claude Code. On s
 | [gleam](./gleam)                                   | Gleam                 | `.gleam`                                    | [gleam](https://gleam.run/)                                                      |
 | [gopls](./gopls)                                   | Go                    | `.go`                                       | [gopls](https://github.com/golang/tools/tree/master/gopls)                       |
 | [intelephense](./intelephense)                     | PHP                   | `.php` `.phtml`                             | [Intelephense](https://github.com/bmewburn/intelephense-docs)                    |
+| [wordpress-intelephense](./wordpress-intelephense) | PHP (WordPress)       | `.php` `.phtml`                             | [Intelephense](https://github.com/bmewburn/intelephense-docs)                    |
 | [jdtls](./jdtls)                                   | Java                  | `.java`                                     | [jdtls](https://github.com/eclipse-jdtls/eclipse.jdt.ls)                         |
 | [kotlin-lsp](./kotlin-lsp)                         | Kotlin                | `.kt` `.kts`                                | [kotlin-lsp](https://github.com/Kotlin/kotlin-lsp)                               |
 | [lua-language-server](./lua-language-server)       | Lua                   | `.lua`                                      | [lua-language-server](https://github.com/LuaLS/lua-language-server)              |
@@ -76,6 +77,7 @@ Install individual plugins:
 /plugin install gleam@claude-code-lsps
 /plugin install gopls@claude-code-lsps
 /plugin install intelephense@claude-code-lsps
+/plugin install wordpress-intelephense@claude-code-lsps
 /plugin install jdtls@claude-code-lsps
 /plugin install kotlin-lsp@claude-code-lsps
 /plugin install lua-language-server@claude-code-lsps
@@ -285,6 +287,17 @@ opam init
 
 <details>
 <summary><strong>PHP (intelephense)</strong></summary>
+
+```bash
+npm install -g intelephense
+```
+
+</details>
+
+<details>
+<summary><strong>PHP / WordPress (wordpress-intelephense)</strong></summary>
+
+Same LSP as `intelephense` but with WordPress stubs enabled. Install this **instead of** `intelephense` for WordPress projects.
 
 ```bash
 npm install -g intelephense
