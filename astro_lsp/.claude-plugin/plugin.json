@@ -1,0 +1,9 @@
+{
+  "name": "astro-lsp",
+  "description": "Astro language server for .astro files",
+  "version": "1.0.0",
+  "author": {
+    "name": "synxn1o"
+  },
+  "license": "MIT"
+}
