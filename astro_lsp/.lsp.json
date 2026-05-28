@@ -1,0 +1,14 @@
+{
+  "astro": {
+    "command": "astro-ls",
+    "args": ["--stdio"],
+    "extensionToLanguage": {
+      ".astro": "astro"
+    },
+    "initializationOptions": {
+      "typescript": {
+        "tsdk": "node_modules/typescript/lib"
+      }
+    }
+  }
+}

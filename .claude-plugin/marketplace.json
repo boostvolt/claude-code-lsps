@@ -13,6 +13,17 @@
   },
   "plugins": [
     {
+      "name": "astro-lsp",
+      "version": "1.0.0",
+      "source": "./astro_lsp",
+      "description": "Astro language server",
+      "category": "development",
+      "tags": ["astro", "lsp"],
+      "author": {
+        "name": "synxn1o"
+      }
+    },
+    {
       "name": "bash-language-server",
       "version": "1.0.0",
       "source": "./bash-language-server",
